@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameer Gautam | Creative Portfolio</title>
+    <meta name="description" content="Portfolio of Sameer Gautam - Full Stack Developer & CS Student">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <!-- font-awesome icons libraries is used -->
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            bg: '#050505',
+                            card: '#0a0a0a', 
+                            border: '#262626'
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- External stylesheet for custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-neutral-900 dark:bg-dark-bg dark:text-neutral-200 transition-colors duration-300 min-h-screen antialiased selection:bg-neutral-900 selection:text-white dark:selection:bg-white dark:selection:text-black overflow-x-hidden">
+
+    <!-- Noise Texture -->
+    <div class="bg-noise"></div>
+
+    <!-- Background Effects -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150"></div>
+        <!-- Ambient Light Orb -->
+        <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-500/20 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob dark:mix-blend-lighten dark:bg-white/5"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-500/20 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000 dark:mix-blend-lighten dark:bg-white/5"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-3xl mx-auto px-6 pt-32 pb-40 space-y-32">
+
+        <!-- Hero Section -->
+        <section id="home" class="reveal active space-y-8 text-center sm:text-left">
+            <div class="flex flex-col-reverse sm:flex-row justify-between items-center gap-10">
+                <div class="space-y-6 max-w-lg">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 text-xs font-medium text-neutral-600 dark:text-neutral-400">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        Available for opportunities
+                    </div>
+                    
+                    <h1 class="text-5xl sm:text-6xl font-bold font-display tracking-tight leading-[1.1]">
+                        I'm Sameer,<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-500" id="typewriter"></span><span class="cursor-blink"></span>
+                    </h1>
+                    
+                    <p class="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                        I bridge the gap between complex backend logic and elegant frontend design. Specialized in building scalable MERN stack applications that solve real-world problems.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 justify-center sm:justify-start pt-2">
+                        <a href="#contact" class="group relative px-6 py-3 bg-neutral-900 dark:bg-white text-white dark:text-black font-medium rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95">
+                            <span class="relative z-10">Connect Now</span>
+                            <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                        </a>
+                        <a href="Sameer Resume 4.pdf" target="_blank" class="px-6 py-3 border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-full font-medium transition-colors">
+                            View Resume
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Creative Avatar / Logo -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-neutral-200 to-neutral-400 dark:from-neutral-800 dark:to-neutral-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center overflow-hidden">
+                        <!-- Stylized Initials -->
+                        <span class="font-display text-5xl font-bold text-neutral-300 dark:text-neutral-700 select-none group-hover:scale-110 transition-transform duration-500">SG</span>
+                    </div>
+                    <!-- Orbiting Badge -->
+                    <div class="absolute -bottom-2 -right-2 bg-white dark:bg-neutral-800 text-xs font-bold px-2 py-1 rounded-md shadow-lg border border-neutral-100 dark:border-neutral-700 animate-bounce">
+                        Dev
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links (Minimal) -->
+            <div class="flex justify-center sm:justify-start gap-6 text-neutral-500 dark:text-neutral-500">
+                <a href="https://github.com/MasterchiefSameer/" target="_blank" class="hover:text-black dark:hover:text-white transition-transform hover:-translate-y-1"><i class="fab fa-github text-2xl"></i></a>
+                <a href="https://linkedin.com/in/sameergautam1996/" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition-transform hover:-translate-y-1"><i class="fab fa-linkedin text-2xl"></i></a>
+                <a href="mailto:sameergautam024gmail.com" class="hover:text-red-500 transition-transform hover:-translate-y-1"><i class="fas fa-envelope text-2xl"></i></a>
+            </div>
+        </section>
+
+        <!-- Static Skills Section (No Motion) -->
+        <section class="reveal space-y-8 border-y border-neutral-100 dark:border-neutral-900/50 py-10">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-500 mb-4">Technical Arsenal</h2>
+            <div id="tech-list" class="flex flex-wrap gap-3"></div>
+        </section> 
+
+        <!-- Education Section (Added Back) -->
+        <section id="education" class="reveal space-y-10">
+            <h2 class="text-3xl font-display font-bold">Education</h2>
+            <div class="grid gap-6">
+                
+                <!-- University -->
+                <div class="spotlight-card rounded-xl group">
+                    <div class="card-content bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
+                        <div class="w-20 h-20 shrink-0 bg-white p-2 rounded-full border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center justify-center">
+                            <img src="csjmu.png" alt="CSJMU Logo" class="w-full h-full object-contain rounded-full border border-neutral-200">
+                        </div>
+                        <div class="flex-1 space-y-2">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                                <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Chhatrapati Shahu Ji Maharaj University</h3>
+                                <span class="text-sm font-mono text-neutral-500">2022 - 2026</span>
+                            </div>
+                            <p class="text-neutral-600 dark:text-neutral-400 font-medium">B.Tech in Computer Science and Engineering</p>
+                            <p class="text-sm text-neutral-500">Kanpur, Uttar Pradesh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- School -->
+                <div class="spotlight-card rounded-xl group">
+                    <div class="card-content bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
+                        <div class="w-20 h-20 shrink-0 bg-white p-2 rounded-full border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center justify-center">
+                            <img src="kvoc.jpg" alt="KV Logo" class="w-full h-full object-contain rounded-full border border-neutral-200 ">
+                        </div>
+                        <div class="flex-1 space-y-2">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                                <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Kendriya Vidyalaya Old Cantt</h3>
+                                <span class="text-sm font-mono text-neutral-500">2021</span>
+                            </div>
+                            <p class="text-neutral-600 dark:text-neutral-400 font-medium">Higher Secondary (PCM)</p>
+                            <p class="text-sm text-neutral-500">Prayagraj, Uttar Pradesh</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section (Spotlight Cards) -->
+        <section id="projects" class="reveal space-y-10">
+            <div class="flex items-end justify-between">
+                <h2 class="text-3xl font-display font-bold">Featured Projects</h2>
+                <span class="text-sm text-neutral-500 font-mono hidden sm:block">03 / SELECTED WORKS</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="card-container">
+                
+                <!-- Card 1 -->
+                <div class="spotlight-card rounded-2xl md:col-span-2 group">
+                    <div class="card-content bg-white dark:bg-neutral-900 rounded-2xl p-8 h-full flex flex-col md:flex-row gap-8 items-start">
+                        <div class="flex-1 space-y-4 relative z-20">
+                            <div class="flex justify-between items-start">
+                                <div class="space-y-1">
+                                    <h3 class="text-2xl font-bold font-display group-hover:text-purple-500 transition-colors">Foodie Diet</h3>
+                                    <p class="text-sm font-mono text-green-500">Ongoing • Full Stack</p>
+                                </div>
+                                <div class="flex gap-3 text-neutral-400">
+                                    <a href="#" class="hover:text-black dark:hover:text-white transition-colors"><i class="fab fa-github text-xl"></i></a>
+                                    <a href="#" class="hover:text-black dark:hover:text-white transition-colors"><i class="fas fa-external-link-alt text-xl"></i></a>
+                                </div>
+                            </div>
+                            <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                A comprehensive dietary platform aimed at reducing food waste and promoting plant-based nutrition. Features a personalized recipe engine, pantry management, and dynamic nutrition visualization.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500">React</span>
+                                <span class="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500">Node.js</span>
+                                <span class="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="spotlight-card rounded-2xl group">
+                    <div class="card-content bg-white dark:bg-neutral-900 rounded-2xl p-6 h-full flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold font-display group-hover:text-blue-500 transition-colors">Real-Time Chat</h3>
+                                <a href="#" class="text-neutral-400 hover:text-white"><i class="fab fa-github"></i></a>
+                            </div>
+                            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                Bi-directional communication platform using Socket.io. Supports typing indicators, live status, and secure message storage.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-6">
+                            <span class="px-2 py-1 text-[10px] border border-neutral-200 dark:border-neutral-800 rounded text-neutral-500">Socket.io</span>
+                            <span class="px-2 py-1 text-[10px] border border-neutral-200 dark:border-neutral-800 rounded text-neutral-500">MERN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="spotlight-card rounded-2xl group">
+                    <div class="card-content bg-white dark:bg-neutral-900 rounded-2xl p-6 h-full flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold font-display group-hover:text-orange-500 transition-colors">Gemini Clone</h3>
+                                <a href="#" class="text-neutral-400 hover:text-white"><i class="fab fa-github"></i></a>
+                            </div>
+                            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                AI chatbot interface replicating Google Gemini's UX. Highly responsive and optimized for mobile devices.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-6">
+                            <span class="px-2 py-1 text-[10px] border border-neutral-200 dark:border-neutral-800 rounded text-neutral-500">Gemini API</span>
+                            <span class="px-2 py-1 text-[10px] border border-neutral-200 dark:border-neutral-800 rounded text-neutral-500">React</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Certifications & Achievements -->
+        <section id="achievements" class="reveal space-y-10">
+            <h2 class="text-3xl font-display font-bold">Certifications</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <div class="flex items-center gap-4 p-4 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-100 dark:bg-green-900/20 rounded-lg text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-certificate text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">GFG 160 Days Coding</h4>
+                        <p class="text-sm text-neutral-500">GeeksforGeeks</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 dark:bg-blue-900/20 rounded-lg text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shield-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Cyber Security</h4>
+                        <p class="text-sm text-neutral-500">C3iHub IIT Kanpur</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-purple-100 dark:bg-purple-900/20 rounded-lg text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-server text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Back-end Development</h4>
+                        <p class="text-sm text-neutral-500">Techkriti IIT Kanpur</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-yellow-100 dark:bg-yellow-900/20 rounded-lg text-yellow-600 dark:text-yellow-400 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-briefcase text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">ESG Job Simulation</h4>
+                        <p class="text-sm text-neutral-500">Tata Group (Forage)</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-red-100 dark:bg-red-900/20 rounded-lg text-red-600 dark:text-red-400 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-brain text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">OCI AI Foundations</h4>
+                        <p class="text-sm text-neutral-500">Oracle University</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Volunteering -->
+         <section class="reveal space-y-8">
+            <h2 class="text-3xl font-display font-bold">Volunteering & Leadership</h2>
+            <div class="border-l border-neutral-200 dark:border-neutral-800 ml-3 space-y-12">
+                
+                <!-- T&P Cell -->
+                <div class="relative pl-12 group">
+                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-neutral-400 rounded-full group-hover:bg-black dark:group-hover:bg-white transition-colors ring-4 ring-white dark:ring-dark-bg"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                        <h4 class="text-lg font-bold">Student Coordinator</h4>
+                        <span class="text-sm font-mono text-neutral-500">Oct 2025</span>
+                    </div>
+                    <p class="text-neutral-600 dark:text-neutral-400 font-medium">Training and Placement Cell, CSJMU Kanpur</p>
+                    <p class="text-sm text-neutral-500 mt-2 max-w-lg">
+                        Played a key role in organizing the Campus Job Fair 2025. Managed on-ground logistics,
+                        coordinated with recruiters, and streamlined the interview process for hundreds of students.
+                    </p>
+                </div>
+
+                <!-- Digital Identity Awareness Workshop -->
+                <div class="relative pl-12 group">
+                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-neutral-400 rounded-full group-hover:bg-black dark:group-hover:bg-white transition-colors ring-4 ring-white dark:ring-dark-bg"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                        <h4 class="text-lg font-bold">Organizer Team Member</h4>
+                        <span class="text-sm font-mono text-neutral-500">Aug 2025</span>
+                    </div>
+                    <p class="text-neutral-600 dark:text-neutral-400 font-medium">Training and Placement Cell, CSJMU Kanpur</p>
+                    <p class="text-sm text-neutral-500 mt-2 max-w-lg">
+                        Played a key role as a member of the organizing committee for the "Digital Identity Awarness Workshop".
+                        Assisted in coordinating sessions, managing logistics, promotional outreach 
+                        and ensuring a smooth experience for all participants.
+                    </p>
+                </div>
+
+                <!-- ICRAECCT -->
+                <div class="relative pl-12 group">
+                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-neutral-400 rounded-full group-hover:bg-black dark:group-hover:bg-white transition-colors ring-4 ring-white dark:ring-dark-bg"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                        <h4 class="text-lg font-bold">Student Volunteer on ICRAECCT-2025</h4>
+                        <span class="text-sm font-mono text-neutral-500">April -2025</span>
+                    </div>
+                    <p class="text-neutral-600 dark:text-neutral-400 font-medium">International Cell, CSJMU</p>
+                    <p class="text-sm text-neutral-500 mt-2 max-w-lg">
+                        Served as a core volunteer for the International Conference on Recent Advances in Engineering, Computing,
+                        and Communication Technologies.
+                    </p>
+                </div>
+
+                <!-- GDG -->
+                <div class="relative pl-12 group">
+                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-neutral-400 rounded-full group-hover:bg-black dark:group-hover:bg-white transition-colors ring-4 ring-white dark:ring-dark-bg"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                        <h4 class="text-lg font-bold">Organizer Team Member</h4>
+                        <span class="text-sm font-mono text-neutral-500">May 2023 - june 2023</span>
+                    </div>
+                    <p class="text-neutral-600 dark:text-neutral-400 font-medium">GDG Kanpur & Tech Events</p>
+                    <p class="text-sm text-neutral-500 mt-2 max-w-lg">
+                        Active organizer for Google Developer Groups (GDG) and various college tech fests. Facilitating workshops and 
+                        fostering a collaborative developer community.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact / Footer -->
+        <section id="contact" class="reveal pt-20 border-t border-neutral-200 dark:border-neutral-800 text-center space-y-6">
+            <h2 class="text-5xl sm:text-7xl font-display font-bold tracking-tighter hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors cursor-default">
+                Let's Work<br>Together.
+            </h2>
+            <p class="text-neutral-600 dark:text-neutral-400 max-w-md mx-auto">
+                I'm currently looking for new opportunities to build scalable solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+                <a href="mailto:sameergautam024gmail.com" class="px-8 py-4 bg-neutral-900 dark:bg-white text-white dark:text-black font-medium rounded-full hover:scale-105 transition-transform shadow-xl shadow-neutral-500/10">
+                    Send Email
+                </a>
+                <a href="https://linkedin.com/in/sameergautam1996/" target="_blank" class="px-8 py-4 border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-full font-medium transition-colors">
+                    LinkedIn Profile
+                </a>
+            </div>
+            
+            <div class="pt-20 pb-40 text-xs text-neutral-500 flex justify-between items-center">
+                <p>&copy; 2026 Sameer Gautam.</p>
+                <p>Kanpur, India</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Floating Dock Navigation -->
+    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+        <div class="dock-container flex items-center gap-1 p-2 bg-white/80 dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-2xl shadow-black/10">
+            
+            <a href="#home" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all hover:scale-110" aria-label="Home">
+                <i class="fas fa-home text-lg"></i>
+            </a>
+            
+            <a href="#education" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all hover:scale-110" aria-label="Education">
+                <i class="fas fa-graduation-cap text-lg"></i>
+            </a>
+
+            <a href="#projects" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all hover:scale-110" aria-label="Projects">
+                <i class="fas fa-layer-group text-lg"></i>
+            </a>
+
+            <a href="#achievements" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all hover:scale-110" aria-label="Achievements">
+                <i class="fas fa-certificate text-lg"></i>
+            </a>
+            <div class="w-px h-6 bg-neutral-300 dark:bg-neutral-700 mx-2"></div>
+
+            <a href="https://github.com/MasterchiefSameer" target="_blank" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all hover:scale-110" aria-label="GitHub">
+                <i class="fab fa-github text-lg"></i>
+            </a>
+
+            <a href="https://linktr.ee/sameergautam024" target="_blank" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-green-600 dark:hover:text-green-500 transition-all hover:scale-110" aria-label="Linktree">
+                <i class="fas fa-link text-lg"></i>
+            </a>
+            <!-- line between theme toggle and github -->
+            <div class="w-px h-6 bg-neutral-300 dark:bg-neutral-700 mx-2"></div>
+
+            <button id="theme-toggle" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all hover:scale-110">
+                <i class="fas fa-moon dark:hidden"></i>
+                <i class="fas fa-sun hidden dark:block"></i>
+            </button>
+
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
