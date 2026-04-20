@@ -16,7 +16,7 @@
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+   <!-- font-awesome icons libraries is used -->
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
@@ -51,109 +51,14 @@
         }
     </script>
 
-    <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #404040;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #525252;
-        }
-
-        /* Noise Texture for Premium Feel */
-        .bg-noise {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 5;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-        .dark .bg-noise {
-            opacity: 0.05;
-        }
-
-        /* Spotlight Effect CSS */
-        .spotlight-card {
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-        }
-        .spotlight-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.06), transparent 40%);
-            opacity: 0;
-            transition: opacity 0.5s;
-            pointer-events: none;
-            z-index: 2;
-        }
-        .spotlight-card:hover::before {
-            opacity: 1;
-        }
-        /* Border Glow */
-        .spotlight-card::after {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.4), transparent 40%);
-            opacity: 0;
-            z-index: 1;
-            transition: opacity 0.5s;
-        }
-        .spotlight-card:hover::after {
-            opacity: 1;
-        }
-        .card-content {
-            position: relative;
-            z-index: 10;
-            background-color: var(--card-bg, #0a0a0a);
-            margin: 1px; /* The border width */
-            border-radius: inherit;
-            height: calc(100% - 2px);
-            width: calc(100% - 2px);
-        }
-        .light .card-content {
-            --card-bg: #ffffff;
-        }
-
-        /* Typewriter Cursor */
-        .cursor-blink {
-            display: inline-block;
-            width: 2px;
-            height: 1.2em;
-            background-color: currentColor;
-            margin-left: 2px;
-            animation: blink 1s step-end infinite;
-            vertical-align: middle;
-        }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-        /* Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Dock */
-        .dock-container {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-    </style>
+    <!-- External stylesheet for custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Vercel Web Analytics -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-dark-bg dark:text-neutral-200 transition-colors duration-300 min-h-screen antialiased selection:bg-neutral-900 selection:text-white dark:selection:bg-white dark:selection:text-black overflow-x-hidden">
 
@@ -216,7 +121,7 @@
 
             <!-- Social Links (Minimal) -->
             <div class="flex justify-center sm:justify-start gap-6 text-neutral-500 dark:text-neutral-500">
-                <a href="https://github.com/" target="_blank" class="hover:text-black dark:hover:text-white transition-transform hover:-translate-y-1"><i class="fab fa-github text-2xl"></i></a>
+                <a href="https://github.com/MasterchiefSameer/" target="_blank" class="hover:text-black dark:hover:text-white transition-transform hover:-translate-y-1"><i class="fab fa-github text-2xl"></i></a>
                 <a href="https://linkedin.com/in/sameergautam1996/" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition-transform hover:-translate-y-1"><i class="fab fa-linkedin text-2xl"></i></a>
                 <a href="mailto:sameergautam024gmail.com" class="hover:text-red-500 transition-transform hover:-translate-y-1"><i class="fas fa-envelope text-2xl"></i></a>
             </div>
@@ -237,7 +142,7 @@
                 <div class="spotlight-card rounded-xl group">
                     <div class="card-content bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
                         <div class="w-20 h-20 shrink-0 bg-white p-2 rounded-full border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center justify-center">
-                            <img src="csjmu.png" alt="CSJMU Logo" class="w-full h-full object-contain">
+                            <img src="csjmu.png" alt="CSJMU Logo" class="w-full h-full object-contain rounded-full border border-neutral-200">
                         </div>
                         <div class="flex-1 space-y-2">
                             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
@@ -254,7 +159,7 @@
                 <div class="spotlight-card rounded-xl group">
                     <div class="card-content bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
                         <div class="w-20 h-20 shrink-0 bg-white p-2 rounded-full border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center justify-center">
-                            <img src="kvoc.jpg" alt="KV Logo" class="w-full h-full object-contain">
+                            <img src="kvoc.jpg" alt="KV Logo" class="w-full h-full object-contain rounded-full border border-neutral-200 ">
                         </div>
                         <div class="flex-1 space-y-2">
                             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
@@ -391,22 +296,81 @@
                     </div>
                 </div>
 
+                <div class="flex items-center gap-4 p-4 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-red-100 dark:bg-red-900/20 rounded-lg text-red-600 dark:text-red-400 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-brain text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">OCI AI Foundations</h4>
+                        <p class="text-sm text-neutral-500">Oracle University</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <!-- Volunteering -->
-        <section class="reveal space-y-8">
-            <h2 class="text-3xl font-display font-bold">Volunteering</h2>
-            <div class="border-l border-neutral-200 dark:border-neutral-800 ml-3 space-y-8">
+         <section class="reveal space-y-8">
+            <h2 class="text-3xl font-display font-bold">Volunteering & Leadership</h2>
+            <div class="border-l border-neutral-200 dark:border-neutral-800 ml-3 space-y-12">
+                
+                <!-- T&P Cell -->
                 <div class="relative pl-12 group">
                     <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-neutral-400 rounded-full group-hover:bg-black dark:group-hover:bg-white transition-colors ring-4 ring-white dark:ring-dark-bg"></div>
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
-                        <h4 class="text-lg font-bold">Community Leadership (Volunteer)</h4>
-                        <span class="text-sm font-mono text-neutral-500">Ongoing</span>
+                        <h4 class="text-lg font-bold">Student Coordinator</h4>
+                        <span class="text-sm font-mono text-neutral-500">Oct 2025</span>
                     </div>
-                    <p class="text-neutral-600 dark:text-neutral-400">GDG Kanpur & GDG I/O Events</p>
-                    <p class="text-sm text-neutral-500 mt-2 max-w-lg">Fostering community growth, mentoring peers, and coordinating large-scale tech events as a Student Coordinator.</p>
+                    <p class="text-neutral-600 dark:text-neutral-400 font-medium">Training and Placement Cell, CSJMU Kanpur</p>
+                    <p class="text-sm text-neutral-500 mt-2 max-w-lg">
+                        Played a key role in organizing the Campus Job Fair 2025. Managed on-ground logistics,
+                        coordinated with recruiters, and streamlined the interview process for hundreds of students.
+                    </p>
                 </div>
+
+                <!-- Digital Identity Awareness Workshop -->
+                <div class="relative pl-12 group">
+                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-neutral-400 rounded-full group-hover:bg-black dark:group-hover:bg-white transition-colors ring-4 ring-white dark:ring-dark-bg"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                        <h4 class="text-lg font-bold">Organizer Team Member</h4>
+                        <span class="text-sm font-mono text-neutral-500">Aug 2025</span>
+                    </div>
+                    <p class="text-neutral-600 dark:text-neutral-400 font-medium">Training and Placement Cell, CSJMU Kanpur</p>
+                    <p class="text-sm text-neutral-500 mt-2 max-w-lg">
+                        Played a key role as a member of the organizing committee for the "Digital Identity Awarness Workshop".
+                        Assisted in coordinating sessions, managing logistics, promotional outreach 
+                        and ensuring a smooth experience for all participants.
+                    </p>
+                </div>
+
+                <!-- ICRAECCT -->
+                <div class="relative pl-12 group">
+                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-neutral-400 rounded-full group-hover:bg-black dark:group-hover:bg-white transition-colors ring-4 ring-white dark:ring-dark-bg"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                        <h4 class="text-lg font-bold">Student Volunteer on ICRAECCT-2025</h4>
+                        <span class="text-sm font-mono text-neutral-500">April -2025</span>
+                    </div>
+                    <p class="text-neutral-600 dark:text-neutral-400 font-medium">International Cell, CSJMU</p>
+                    <p class="text-sm text-neutral-500 mt-2 max-w-lg">
+                        Served as a core volunteer for the International Conference on Recent Advances in Engineering, Computing,
+                        and Communication Technologies.
+                    </p>
+                </div>
+
+                <!-- GDG -->
+                <div class="relative pl-12 group">
+                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 bg-neutral-400 rounded-full group-hover:bg-black dark:group-hover:bg-white transition-colors ring-4 ring-white dark:ring-dark-bg"></div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                        <h4 class="text-lg font-bold">Organizer Team Member</h4>
+                        <span class="text-sm font-mono text-neutral-500">May 2023 - june 2023</span>
+                    </div>
+                    <p class="text-neutral-600 dark:text-neutral-400 font-medium">GDG Kanpur & Tech Events</p>
+                    <p class="text-sm text-neutral-500 mt-2 max-w-lg">
+                        Active organizer for Google Developer Groups (GDG) and various college tech fests. Facilitating workshops and 
+                        fostering a collaborative developer community.
+                    </p>
+                </div>
+
             </div>
         </section>
 
@@ -454,11 +418,16 @@
             <a href="#achievements" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all hover:scale-110" aria-label="Achievements">
                 <i class="fas fa-certificate text-lg"></i>
             </a>
+            <div class="w-px h-6 bg-neutral-300 dark:bg-neutral-700 mx-2"></div>
 
-            <a href="https://github.com/" target="_blank" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all hover:scale-110" aria-label="GitHub">
+            <a href="https://github.com/MasterchiefSameer" target="_blank" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all hover:scale-110" aria-label="GitHub">
                 <i class="fab fa-github text-lg"></i>
             </a>
 
+            <a href="https://linktr.ee/sameergautam024" target="_blank" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-green-600 dark:hover:text-green-500 transition-all hover:scale-110" aria-label="Linktree">
+                <i class="fas fa-link text-lg"></i>
+            </a>
+            <!-- line between theme toggle and github -->
             <div class="w-px h-6 bg-neutral-300 dark:bg-neutral-700 mx-2"></div>
 
             <button id="theme-toggle" class="p-3 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all hover:scale-110">
@@ -469,93 +438,6 @@
         </div>
     </div>
 
-    <!-- Logic Script -->
-    <script>
-        // 1. Dark Mode
-        const toggleButton = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
-        
-        // Initial Check
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            htmlElement.classList.add('dark');
-        } else {
-            htmlElement.classList.remove('dark');
-        }
-
-        toggleButton.addEventListener('click', () => {
-            htmlElement.classList.toggle('dark');
-            localStorage.theme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
-        });
-
-        // 2. Typewriter Effect
-        const words = ["Full Stack Developer", "CS Student", "React Specialist", "Problem Solver"];
-        let i = 0;
-        let timer;
-
-        function typeWriter() {
-            const heading = document.getElementById("typewriter");
-            const word = words[i];
-            const current = heading.textContent;
-
-            if (!heading.dataset.deleting && current.length < word.length) {
-                // Typing
-                heading.textContent = word.substring(0, current.length + 1);
-                timer = setTimeout(typeWriter, 100);
-            } else if (!heading.dataset.deleting && current.length === word.length) {
-                // Wait at end
-                heading.dataset.deleting = "true";
-                timer = setTimeout(typeWriter, 2000);
-            } else if (heading.dataset.deleting && current.length > 0) {
-                // Deleting
-                heading.textContent = word.substring(0, current.length - 1);
-                timer = setTimeout(typeWriter, 50);
-            } else {
-                // Next word
-                heading.dataset.deleting = "";
-                i = (i + 1) % words.length;
-                timer = setTimeout(typeWriter, 500);
-            }
-        }
-        typeWriter();
-         // 2.1 Skills generator (replace repeated spans with data-driven list)
-        const skills = ["React.js","Node.js","MongoDB","Express","JavaScript","C++","C","Tailwind CSS","Python","Linux","Data Structures","mysql","Git & Github","Canva","Figma"];
-        const techList = document.getElementById('tech-list');
-        if (techList) {
-            const baseClass = "px-4 py-2 bg-neutral-100 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-lg text-sm font-medium hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors cursor-default";
-            techList.append(...skills.map(s => {
-                const span = document.createElement('span');
-                span.className = baseClass;
-                span.textContent = s;
-                return span;
-            }));
-        }
-
-        // 3. Spotlight Effect
-        const container = document.body; 
-        // Applying listener to body to capture mouse movement even outside specific containers for smoother transitions
-        const cards = document.querySelectorAll('.spotlight-card');
-
-        window.addEventListener('mousemove', e => {
-            for(const card of cards) {
-                const rect = card.getBoundingClientRect(),
-                      x = e.clientX - rect.left,
-                      y = e.clientY - rect.top;
-
-                card.style.setProperty("--mouse-x", `${x}px`);
-                card.style.setProperty("--mouse-y", `${y}px`);
-            }
-        });
-
-        // 4. Scroll Reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>

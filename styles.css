@@ -1,101 +1,45 @@
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
+.todo-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-::-webkit-scrollbar-thumb {
-    background: #404040;
+
+.todo-list li {
+    padding: 8px;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
     border-radius: 4px;
 }
-::-webkit-scrollbar-thumb:hover {
-    background: #525252;
+
+.todo-list li.completed {
+    text-decoration: line-through;
+    color: #999;
 }
 
-/* Noise Texture for Premium Feel */
-.bg-noise {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 5;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-.dark .bg-noise {
-    opacity: 0.05;
+.add-todo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-/* Spotlight Effect CSS */
-.spotlight-card {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-}
-.spotlight-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.06), transparent 40%);
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
-    z-index: 2;
-}
-.spotlight-card:hover::before {
-    opacity: 1;
-}
-/* Border Glow */
-.spotlight-card::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.4), transparent 40%);
-    opacity: 0;
-    z-index: 1;
-    transition: opacity 0.5s;
-}
-.spotlight-card:hover::after {
-    opacity: 1;
-}
-.card-content {
-    position: relative;
-    z-index: 10;
-    background-color: var(--card-bg, #0a0a0a);
-    margin: 1px; /* The border width */
-    border-radius: inherit;
-    height: calc(100% - 2px);
-    width: calc(100% - 2px);
-}
-.light .card-content {
-    --card-bg: #ffffff;
+.add-todo input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-/* Typewriter Cursor */
-.cursor-blink {
-    display: inline-block;
-    width: 2px;
-    height: 1.2em;
-    background-color: currentColor;
-    margin-left: 2px;
-    animation: blink 1s step-end infinite;
-    vertical-align: middle;
-}
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-/* Reveal Animation */
-.reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-}
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+.add-todo button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-/* Dock */
-.dock-container {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+.add-todo button:hover {
+    background-color: #0056b3;
 }
