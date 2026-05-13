@@ -1,9 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { GitHubCalendar } from 'react-github-calendar';
+// import MyCalender from 'react-github-calendar';
 import './App.css';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const typewriterRef = useRef(null);
+  const [isTechExpanded, setIsTechExpanded] = useState(false);
   
   // Dark mode effect
   useEffect(() => {
@@ -100,7 +103,15 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  const skills = ["React.js","Node.js","MongoDB","Express","JavaScript","C++","C","Tailwind CSS","Python","Linux","Data Structures","MySQL","Git & Github","Canva","Figma"];
+  const oldSkills = ["React.js","Node.js","MongoDB","Express","JavaScript","C++","C","Tailwind CSS","Python","Linux","Data Structures","MySQL","Git & Github","Canva","Figma"];
+  
+  const categorizedSkills = {
+    "LANGUAGES": ["C++", "C", "Python", "JavaScript"],
+    "FRONTEND": ["React.js", "Tailwind CSS", "Next.js"],
+    "BACKEND & DB": ["Node.js", "Express", "MongoDB", "MySQL"],
+    "INFRA & TOOLS": ["Linux", "Git & Github", "Canva", "Figma", "Docker", "AWS", "Vercel"],
+    // "CORE CONCEPTS": ["Data Structures"]
+  };
 
   return (
     <div className="bg-white text-neutral-900 dark:bg-dark-bg dark:text-neutral-200 transition-colors duration-300 min-h-screen antialiased selection:bg-neutral-900 selection:text-white dark:selection:bg-white dark:selection:text-black overflow-x-hidden">
@@ -116,7 +127,7 @@ function App() {
         </div>
 
         {/* Main Content */}
-        <main className="relative z-10 max-w-3xl mx-auto px-6 pt-32 pb-40 space-y-32">
+        <main className="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-40 space-y-32">
 
             {/* Hero Section */}
             <section id="home" className="reveal active space-y-8 text-center sm:text-left">
@@ -170,17 +181,64 @@ function App() {
                 </div>
             </section>
 
-            {/* Static Skills Section (No Motion) */}
+            {/* 
+              NOTE: If you want to revert to the old Technical Arsenal, 
+              comment out the new "Tech Stack" section below, and uncomment the code below:
+              
+              <section className="reveal space-y-8 border-y border-neutral-100 dark:border-neutral-900/50 py-10">
+                  <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-500 mb-4">Technical Arsenal</h2>
+                  <div id="tech-list" className="flex flex-wrap gap-3">
+                    {oldSkills.map(skill => (
+                      <span key={skill} className="px-4 py-2 bg-neutral-100 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-lg text-sm font-medium hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors cursor-default">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+              </section> 
+            */}
+
+            {/* Interactive Tech Stack */}
             <section className="reveal space-y-8 border-y border-neutral-100 dark:border-neutral-900/50 py-10">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-500 mb-4">Technical Arsenal</h2>
-                <div id="tech-list" className="flex flex-wrap gap-3">
-                  {skills.map(skill => (
-                    <span key={skill} className="px-4 py-2 bg-neutral-100 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-lg text-sm font-medium hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors cursor-default">
-                      {skill}
-                    </span>
-                  ))}
+                <div className="flex justify-between items-center mb-8">
+                    <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-500">Tech Stack</h2>
+                    <button 
+                        onClick={() => setIsTechExpanded(!isTechExpanded)}
+                        className="text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-white transition-colors"
+                    >
+                        {isTechExpanded ? "SHOW LESS" : "SHOW MORE"}
+                    </button>
                 </div>
-            </section> 
+
+                {!isTechExpanded ? (
+                    // Merged / Marquee View
+                    <div className="flex overflow-hidden relative group py-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                        <div className="flex animate-marquee group-hover:[animation-play-state:paused] whitespace-nowrap min-w-max w-max items-center">
+                            {[...oldSkills, ...oldSkills, ...oldSkills, ...oldSkills].map((skill, index) => (
+                                <span key={`marquee-${index}`} className="mx-8 text-2xl font-display font-medium text-neutral-700 dark:text-neutral-300 transition-colors hover:text-black dark:hover:text-white cursor-default">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                ) : (
+                    // Expanded / Grid View
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        {Object.entries(categorizedSkills).map(([category, items]) => (
+                            <div key={category} className="space-y-4">
+                                <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 border-b border-neutral-200 dark:border-neutral-800 pb-2 mb-4">{category}</h3>
+                                <ul className="space-y-3">
+                                    {items.map(item => (
+                                        <li key={item} className="group flex items-center gap-4 font-medium text-lg cursor-default transition-all duration-300 hover:translate-x-2">
+                                            <span className="text-neutral-400 dark:text-neutral-600 w-6 font-mono text-sm transition-colors group-hover:text-black dark:group-hover:text-white">{item.substring(0, 2)}</span>
+                                            <span className="text-neutral-600 dark:text-neutral-400 transition-colors group-hover:text-black dark:group-hover:text-white">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </section>
 
             {/* Education Section (Added Back) */}
             <section id="education" className="reveal space-y-10">
@@ -221,6 +279,17 @@ function App() {
                         </div>
                     </div>
 
+                </div>
+            </section>
+
+            {/* GitHub Contributions Section */}
+            <section id="github" className="reveal space-y-10">
+                <h2 className="text-3xl font-display font-bold">GitHub Contributions</h2>
+                <div className="bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 border border-neutral-200 dark:border-neutral-800 flex justify-center overflow-x-auto shadow-sm">
+                    <GitHubCalendar 
+                        username="MasterchiefSameer" 
+                        colorScheme={isDarkMode ? "dark" : "light"}
+                    />
                 </div>
             </section>
 
