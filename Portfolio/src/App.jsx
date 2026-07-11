@@ -108,9 +108,10 @@ function App() {
   const categorizedSkills = {
     "LANGUAGES": ["C++", "C", "Python", "JavaScript"],
     "FRONTEND": ["React.js", "Tailwind CSS", "Next.js"],
-    "BACKEND & DB": ["Node.js", "Express", "MongoDB", "MySQL"],
-    "INFRA & TOOLS": ["Linux", "Git & Github", "Canva", "Figma", "Docker", "AWS", "Vercel"],
-    // "CORE CONCEPTS": ["Data Structures"]
+    "BACKEND & DB": ["Node.js", "Express", "MongoDB", "MySQL", "PostgreSQL"],
+    "INFRA & TOOLS": ["Git & Github", "Canva", "Figma", "Clerk", "Linux", "Antigravity", "PostmanAPI", "Arcjet", "Vercel"],
+    "Cloud & Devops": ["AWS", "kubernetes", "Vercel", "Docker", "Render", "CI/CD pipelines"],
+    "CORE CONCEPTS": ["Data Structures and Algorithms(C++)", "Networking", "OOPs", "OS", "DBMS", "REST APIs", "WebSockets", "JWT Auth", "Scalable Systems", "Performance Optimization"]
   };
 
   return (
@@ -180,6 +181,26 @@ function App() {
                     <a href="https://codolio.com/profile/SameerG" target="_blank" rel="noreferrer" title="Coding History" className="hover:text-green-500 transition-transform hover:-translate-y-1"><i className="fas fa-laptop-code text-2xl"></i></a>
                 </div>
             </section>
+
+            {/* Dynamic Portfolio Alert Banner */}
+            <div className="reveal flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl border border-purple-200 dark:border-purple-800/40 bg-purple-50/30 dark:bg-purple-950/10 backdrop-blur-md">
+                <div className="flex items-center gap-3 text-center sm:text-left flex-col sm:flex-row">
+                    <span className="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0">
+                        <i className="fas fa-info-circle text-sm animate-bounce"></i>
+                    </span>
+                    <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                        Want to see my dynamic new portfolio?
+                    </p>
+                </div>
+                <a 
+                    href="https://sameer-dynamic-portfolio.vercel.app/" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="w-full sm:w-auto text-center px-4 py-2 bg-neutral-900 dark:bg-white text-white dark:text-black font-semibold text-xs rounded-full hover:scale-105 active:scale-95 transition-all shadow-md shadow-purple-500/10"
+                >
+                    Click on this link
+                </a>
+            </div>
 
             {/* 
               NOTE: If you want to revert to the old Technical Arsenal, 
@@ -297,7 +318,7 @@ function App() {
             <section id="projects" className="reveal space-y-10">
                 <div className="flex items-end justify-between">
                     <h2 className="text-3xl font-display font-bold">Featured Projects</h2>
-                    <span className="text-sm text-neutral-500 font-mono hidden sm:block">03 / SELECTED WORKS</span>
+                    <span className="text-sm text-neutral-500 font-mono hidden sm:block">04 / SELECTED WORKS</span>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6" id="card-container">
@@ -328,7 +349,35 @@ function App() {
                         </div>
                     </div>
 
-                    {/* Card 2 */}
+                    {/* Card 2: Wordle NYC */}
+                    <div className="spotlight-card rounded-2xl md:col-span-2 group">
+                        <div className="card-content bg-white dark:bg-neutral-900 rounded-2xl p-8 h-full flex flex-col md:flex-row gap-8 items-start">
+                            <div className="flex-1 space-y-4 relative z-20">
+                                <div className="flex justify-between items-start">
+                                    <div className="space-y-1">
+                                        <h3 className="text-2xl font-bold font-display group-hover:text-emerald-500 transition-colors">Wordle NYC</h3>
+                                        <p className="text-sm font-mono text-green-500">Completed</p>
+                                    </div>
+                                    <div className="flex gap-3 text-neutral-400">
+                                        <a href="https://github.com/MasterchiefSameer/vocab-challenge-hub" target="_blank" rel="noreferrer" className="hover:text-black dark:hover:text-white transition-colors"><i className="fab fa-github text-xl"></i></a>
+                                        <a href="https://vocab-challenge-hub.vercel.app/" target="_blank" rel="noreferrer" className="hover:text-black dark:hover:text-white transition-colors"><i className="fas fa-external-link-alt text-xl"></i></a>
+                                    </div>
+                                </div>
+                                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                    A polished, accessible, production-ready Wordle clone built with Daily and Unlimited game modes. Features custom sound effects, keyboard support, dark mode, statistics persistence, and smooth animations.
+                                </p>
+                                <div className="flex flex-wrap gap-2 pt-2">
+                                    <span className="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500">TanStack Start (React 19)</span>
+                                    <span className="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500">TypeScript</span>
+                                    <span className="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500">Tailwind CSS v4</span>
+                                    <span className="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500">Zustand</span>
+                                    <span className="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500">Vitest</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Card 3 */}
                     <div className="spotlight-card rounded-2xl group">
                         <div className="card-content bg-white dark:bg-neutral-900 rounded-2xl p-6 h-full flex flex-col justify-between">
                             <div className="space-y-4">
@@ -347,7 +396,7 @@ function App() {
                         </div>
                     </div>
 
-                    {/* Card 3 */}
+                    {/* Card 4 */}
                     <div className="spotlight-card rounded-2xl group">
                         <div className="card-content bg-white dark:bg-neutral-900 rounded-2xl p-6 h-full flex flex-col justify-between">
                             <div className="space-y-4">
